@@ -1,0 +1,31 @@
+Set cleaning pipeline
+======================
+
+Run set_cleaning pipeline
+
+USAGE
+
+nextflow run main.nf [OPTIONAL_ARGUMENTS] (--root)
+
+DESCRIPTION
+
+    --root=/path/to/[root]              Root folder containing multiple subjects
+
+                                        [root]
+                                        ├── S1
+                                        │   └── F__Surface_Enhanced_Tractography/*.trk
+                                        │   └── A__Convert_Label_Volume/*.nii.gz
+                                        └── S2
+                                            └── F__Surface_Enhanced_Tractography/*.trk
+                                            └── A__Convert_Label_Volume/*.nii.gz
+
+    --output_dir                        Directory where to write the final results.
+                                        By default, will be in "./results_set_conversion"
+
+OPTIONAL ARGUMENTS (current value)
+
+    --debug                             Debug will output more streamline files
+
+AVAILABLE PROFILES (using -profile option (e.g. -profile macos))
+
+macos When this profile is used, ExtractorFlow will modify a parameter (scratch) for MacOS users.
