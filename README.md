@@ -1,4 +1,4 @@
-ExtractorFlow pipeline
+convert_set_flow pipeline
 ======================
 
 Usage
@@ -10,26 +10,18 @@ See *USAGE* or run `nextflow run main.nf --help`
 Singularity
 -----------
 
-If you are on Linux, we recommend using the Singularity container to run ExtractorFlow
+If you are on Linux, we recommend using the Singularity container to run convert_set_flow
 
-Run the command:
-
-`sudo singularity build singularity_extractorflow.sif singularity_extractorflow.def`
-
-Then you can start the pipeline using this command line:
-
-```
-nextflow main.nf --root=/path_to_your_data/ -with-singularity singularity_extractorflow.sif -resume
-```
+Use scilpy singularity
 
 
 Docker
 ------
-If you are on MacOS or Windows, we recommend using the Docker container to run ExtractorFlow.
+If you are on MacOS or Windows, we recommend using the Docker container to run convert_set_flow.
 
 You can build docker image using this command:
 
-`docker build -t extractor_flow .`
+`docker pull dockerhub/scilus/scilpy:1.1.0 .`
 
 ```
 nextflow main.nf --root=/path_to_your_data/ -with-docker extractor_flow:latest -resume

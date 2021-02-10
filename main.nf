@@ -36,6 +36,7 @@ in_reference.combine(bundles_to_combine, by: 0).set{data_ready}
 
 process clean_trk {
   cpus 1
+  memory '4 GB'
 
   input:
     set sid, file(reference), val(basename), file(tractogram)  from data_ready
@@ -60,6 +61,7 @@ data_to_concatenate.groupTuple(by: 0).set{data_input}
 
 process concatenate_trk {
   cpus 1
+  memory '10 GB'
 
   input:
     set sid, file(tractogram) from data_input
