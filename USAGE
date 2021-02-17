@@ -9,15 +9,21 @@ nextflow run main.nf [OPTIONAL_ARGUMENTS] (--root)
 
 DESCRIPTION
 
-    --root=/path/to/[root]              Root folder containing multiple subjects
+    --root_set=/path/to/[root_set]              Root folder containing multiple subjects
 
                                         [root]
                                         ├── S1
                                         │   └── F__Surface_Enhanced_Tractography/*.trk
-                                        │   └── A__Convert_Label_Volume/*.nii.gz
                                         └── S2
                                             └── F__Surface_Enhanced_Tractography/*.trk
-                                            └── A__Convert_Label_Volume/*.nii.gz
+
+    --root_tractoflow=/path/to/[root_tractoflow] Root folder containing multiple subjects
+
+                                        [root]
+                                        ├── S1
+                                        │   └── DTI_Metrics/*.nii.gz
+                                        └── S2
+                                            └── DTI_Metrics/*.nii.gz
 
     --output_dir                        Directory where to write the final results.
                                         By default, will be in "./results_set_conversion"

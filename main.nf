@@ -11,20 +11,25 @@ if(params.help) {
     return
     }
 
-if (params.root){
-    log.info "Input: $params.root"
-    root = file(params.root)
+if (params.root_set){
+    if (params.root_tractoflow){
+    log.info "Input: $params.root_set"
+    log.info "Input: $params.root_tractoflow"
 
     in_bundles = Channel
-      .fromFilePairs("$params.root/**/F__Surface_Enhanced_Tractography/*.fib",
+      .fromFilePairs("$params.root_set/**/F__Surface_Enhanced_Tractography/*.fib",
                      size: -1) { it.parent.parent.name }
 
     in_reference = Channel
-        .fromFilePairs("$params.root/**/A__Convert_Label_Volume/*.nii.gz",
+        .fromFilePairs("$params.root_tractoflow/**/DTI_Metrics/*fa.nii.gz",
                        size: 1, flat: true) { it.parent.parent.name }
+    }
+    else {
+          error "Error ~ Please use --root_tractoflow for the input data."
+    }
 }
 else {
-    error "Error ~ Please use --root for the input data."
+    error "Error ~ Please use --root_set for the input data."
 }
 
 in_bundles
