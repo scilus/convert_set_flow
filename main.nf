@@ -76,7 +76,7 @@ process concatenate_trk {
 
   script:
   """
-    scil_streamlines_math.py concatenate ${tractogram} \
+    scil_streamlines_math.py lazy_concatenate ${tractogram} \
       ${sid}__set_merged_ic_noloop.trk  -f
   """
 }
