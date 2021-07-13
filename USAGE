@@ -13,9 +13,9 @@ DESCRIPTION
 
                                         [root]
                                         ├── S1
-                                        │   └── F__Surface_Enhanced_Tractography/*.trk
+                                        │   └── F__Surface_Enhanced_Tractography/*.fib
                                         └── S2
-                                            └── F__Surface_Enhanced_Tractography/*.trk
+                                            └── F__Surface_Enhanced_Tractography/*.fib
 
     --root_tractoflow=/path/to/[root_tractoflow] Root folder containing multiple subjects
 
